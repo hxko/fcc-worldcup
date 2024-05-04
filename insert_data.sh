@@ -33,9 +33,6 @@ do
         echo Failed to insert $WINNER into teams
         exit 1
       fi
-
-      # Get the team_id of the newly inserted winner
-      TEAM_ID_WINNER=$($PSQL "select team_id from teams where name='$WINNER'")
     fi
 
     # Check if the opponent_id is not found in the teams table to prevent duplicates
@@ -54,9 +51,6 @@ do
         echo Failed to insert $OPPONENT into teams
         exit 1
       fi
-
-      # Get the team_id of the newly inserted opponent
-      TEAM_ID_OPPONENT=$($PSQL "select team_id from teams where name='$OPPONENT'")
     fi
 
     # Check if any required value is empty
